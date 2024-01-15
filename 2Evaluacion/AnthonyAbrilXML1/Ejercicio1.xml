@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<geografia>
+    <continentes>
+        <continente>
+            <nombrecontinente>Asia</nombrecontinente>
+            <paises>
+                <pais>
+                    <nombrepais>India</nombrepais>
+                    <ciudades>
+                        <ciudad>
+                            <nombreciudad>Nueva Dehli</nombreciudad>
+                        </ciudad>
+                    </ciudades>
+                </pais>
+            </paises>
+        </continente>
+        <continente>
+            <nombrecontinente>Europa</nombrecontinente>
+            <paises>
+                <pais>
+                    <nombrepais>Portugal</nombrepais>
+                    <ciudades>
+                        <ciudad>
+                            <nombreciudad>Lisboa</nombreciudad>
+                        </ciudad>
+                    </ciudades>
+                </pais>
+            </paises>
+        </continente>
+        <continente>
+            <nombrecontinente>Africa</nombrecontinente>
+            <paises>
+                <pais>
+                    <nombrepais>Egipto</nombrepais>
+                    <ciudades>
+                        <ciudad>
+                            <nombreciudad>El Cairo</nombreciudad>
+                        </ciudad>
+                    </ciudades>
+                </pais>
+            </paises>
+        </continente>
+    </continentes>
+</geografia>

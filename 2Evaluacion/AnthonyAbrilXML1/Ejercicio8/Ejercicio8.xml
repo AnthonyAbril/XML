@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<arboles>
+    <arbol>
+        <nombrecientifico>Acer monspessulanum</nombrecientifico>
+        <nombrecomun></nombrecomun>
+        <vegetacion></vegetacion>
+        <altura></altura>
+        <formayestructura></formayestructura>
+        <color>
+            <primavera>Haz verde brillante, envés verde blanquecino</primavera>
+        </color>
+        <resistenciaheladas>Heladas fuertes hasta -15ºC</resistenciaheladas>
+    </arbol>
+</arboles>
