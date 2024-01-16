@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE resoluciones [
- <!ELEMENT resoluciones (resolucion)>
- <!ELEMENT resoluciones EMPTY>
+ <!ELEMENT resoluciones (resolucion*)>
+ <!ELEMENT resolucion EMPTY>
  <!ATTLIST resolucion nombre CDATA #REQUIRED>
  <!ATTLIST resolucion alto NMTOKEN #REQUIRED>
  <!ATTLIST resolucion ancho NMTOKEN #REQUIRED>
