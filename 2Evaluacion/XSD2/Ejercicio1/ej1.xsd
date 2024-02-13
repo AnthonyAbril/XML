@@ -6,7 +6,7 @@
             <xs:maxInclusive value="500" />
         </xs:restriction>
     </xs:simpleType>
-    <xs:simpleType name="PlantillaDNI">
+    <xs:simpleType name="TipoDNI">
         <xs:restriction base="xs:string">
             <xs:pattern value="[0-9]{8}[A-Z]" />
         </xs:restriction>
@@ -27,7 +27,7 @@
                 </xs:element>
                 <xs:element name="telefono" type="xs:string" maxOccurs="5" minOccurs="0" />
             </xs:sequence>
-            <xs:attribute name="dni" type="PlantillaDNI" />
+            <xs:attribute name="dni" type="TipoDNI" />
         </xs:complexType>
     </xs:element>
 </xs:schema>
