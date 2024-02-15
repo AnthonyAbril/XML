@@ -1,16 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="gramos">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+            <xs:maxInclusive value="1000"/>
+        </xs:restriction>
+    </xs:simpleType>
     <xs:element name="heladeria">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="helado">
+                <xs:element name="helado" minOccurs="1" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="chocolate"/>
+                            <xs:choice>
+                                <xs:element name="chocolate" type="gramos"/>
+                                <xs:element name="fresa" type="gramos"/>
+                            </xs:choice>
+                            <xs:choice>
+                                <xs:element name="vainilla" type="gramos"/>
+                                <xs:element name="turron" type="gramos"/>
+                                <xs:element name="nata" type="gramos"/>
+                            </xs:choice>
                         </xs:sequence>
+                        <xs:attribute name="fabricación" type="xs:date"/>
                     </xs:complexType>
                 </xs:element>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
 </xs:schema>
+
+<!-- 
+    A. Como primer elemento de helado, se podrá elegir: o bien chocolate, o
+    bien fresa (pero no ambos a la vez). Estos elementos almacenarán la
+    cantidad en gramos como número entero entre 0 y 1000
+
+    B. Como segundo elemento de helado, se podrá elegir entre vainilla,
+    turron o nata. De nuevo, estos elementos almacenarán la cantidad en
+    gramos como número entero entre 0 y 1000
+    
+    C. El atributo fabricación indicará la fecha en la que se fabricó el helado
+    mediante el tipo de dato de fecha estándar.
+    Recomendación: Usar un tipo de dato construido, creado por ti mismo.
+-->

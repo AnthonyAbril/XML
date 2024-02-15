@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="TipoTelefono">
+        <xs:restriction base="xs:integer">
+            <xs:totalDigits value="9"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="RangoCodigo">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="1000" />
+            <xs:maxInclusive value="9999" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="libreria">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="codigo" type="RangoCodigo"/>
+                <xs:element name="direccion" type="xs:string"/>
+                <xs:element name="telefono" type="TipoTelefono"/>
+                <xs:element name="propietario">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nombre" type="xs:string"/>
+                            <xs:element name="telefono" type="xs:string" maxOccurs="unbounded"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="libro" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="titulo" type="xs:string"/>
+                            <xs:element name="autor" type="xs:string"/>
+                            <xs:element name="formato" minOccurs="0">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="Rústica|Tapa blanda|Tapa dura" />
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="publicacion" type="xs:string"/>
+                            <xs:element name="precio" type="xs:string"/>
+                            <xs:element name="cantidad" type="xs:string" minOccurs="0" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+
+
+<!-- 
+    HECHO
+    A. La libreria tiene obligatoriamente un codigo, una direccion, un
+    telefono, un propietario, y uno o más elementos libro.
+
+    HECHO
+    B. El codigo será un número entero entre 1000 y 9999.
+    
+    HECHO
+    C. El propietario tiene un nombre y puede tener ninguno o varios
+    elementos telefono.
+    
+    HECHO
+    D. El tipo de datos del elemento telefono solo se definirá una vez en el
+    esquema, reutilizándolo. Su contenido será un patrón de 9 números.
+    
+    HECHO
+    E. Cada libro está formado por los elementos titulo, autor, puede tener
+    o no formato, publicacion, precio, cantidad (opcional)
+    
+    HECHO
+    F. El formato podrá ser: Rústica, Tapa blanda o Tapa dura
+-->
