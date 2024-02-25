@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE listacursos [
+    <!ELEMENT listacursos (cursos+)>
+    <!ELEMENT cursos (alumno+)>
+    <!ELEMENT alumno (DNI,nombre,apellido,segundoapellido*,asignaturas)>
+    <!ELEMENT DNI (#PCDATA)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT apellido (#PCDATA)>
+    <!ELEMENT segundoapellido (#PCDATA)>
+    <!ELEMENT asignaturas (asignatura+)>
+    <!ELEMENT asignatura (nombre,profesor)>
+    <!ATTLIST asignatura codigo ID #REQUIRED>
+    <!ELEMENT profesor (NRP,nombre,apellido,segundoapellido*)>
+    <!ELEMENT NRP (#PCDATA)>
+]>
+<listacursos>
+    <cursos>
+        <alumno>
+            <DNI>44530704J</DNI>
+            <nombre>Juan</nombre>
+            <apellido>Lopez</apellido>
+            <segundoapellido>Ballester</segundoapellido>
+            <asignaturas>
+                <asignatura codigo="MAT">
+                    <nombre>Matematicas</nombre>
+                    <profesor>
+                        <NRP>345</NRP>
+                        <nombre>Mario</nombre>
+                        <apellido>Ortiz</apellido>
+                    </profesor>
+                </asignatura>
+                <asignatura codigo="FIS">
+                    <nombre>Fisica</nombre>
+                    <profesor>
+                        <NRP>355</NRP>
+                        <nombre>Ursula</nombre>
+                        <apellido>Rubio</apellido>
+                    </profesor>
+                </asignatura>
+            </asignaturas>
+        </alumno>
+        <alumno>
+            <DNI>26550020Q</DNI>
+            <nombre>Carla</nombre>
+            <apellido>Mora</apellido>
+            <asignaturas>
+                <asignatura codigo="QUI">
+                    <nombre>QUIMICA</nombre>
+                    <profesor>
+                        <NRP>375</NRP>
+                        <nombre>Jorge</nombre>
+                        <apellido>Valero</apellido>
+                    </profesor>
+                </asignatura>
+                <asignatura codigo="BIO">
+                    <nombre>BIOLOGIA</nombre>
+                    <profesor>
+                        <NRP>395</NRP>
+                        <nombre>Ramona</nombre>
+                        <apellido>Garcia</apellido>
+                        <segundoapellido>Palacios</segundoapellido>
+                    </profesor>
+                </asignatura>
+            </asignaturas>
+        </alumno>
+    </cursos>
+</listacursos>

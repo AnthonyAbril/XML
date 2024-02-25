@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE listafacturas [
+    <!ELEMENT listafacturas (factura)>
+    <!ELEMENT factura (emisor,pagador,importe)>
+    <!ATTLIST factura fecha CDATA #IMPLIED>
+    <!ELEMENT emisor (nombre,volumenventas*)>
+    <!ATTLIST emisor cif CDATA #REQUIRED>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT volumenventas (#PCDATA)>
+    <!ELEMENT importe (#PCDATA)>
+    <!ELEMENT pagador (nombre,volumenventas*)>
+    <!ATTLIST pagador cif CDATA #REQUIRED>
+]>
+<listafacturas>
+    <factura fecha="11-2-2021">
+        <emisor cif="123">
+            <nombre>ACEM</nombre>
+        </emisor>
+        <pagador cif="234">
+            <nombre>ACME Inc</nombre>
+        </pagador>
+        <importe>2500</importe>
+    </factura>
+</listafacturas>
